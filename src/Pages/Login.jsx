@@ -22,7 +22,7 @@ const Login = () => {
     const cartData = JSON.parse(localStorage.getItem("cartData") || "{}");
 
     console.log(cartData);
-    await fetch("http://localhost:5050/login", {
+    await fetch("https://backend-push-production.up.railway.app/login", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -43,7 +43,7 @@ const Login = () => {
 
   const signup = async () => {
     let resData;
-    await fetch("http://localhost:5050/signup", {
+    await fetch("https://backend-push-production.up.railway.app/signup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",

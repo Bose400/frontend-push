@@ -23,7 +23,7 @@ const EContextProvider = (props) => {
 
   async function fetchProducts() {
     try {
-      const response = await fetch("http://localhost:5050/allproducts");
+      const response = await fetch("https://backend-push-production.up.railway.app/allproducts");
       const data = await response.json();
       setAllProduct(data);
       // Store the product data in localStorage
@@ -41,7 +41,7 @@ const EContextProvider = (props) => {
 
   // Check if user is logged in and fetch cart data if available
   if (localStorage.getItem("auth-token")) {
-    fetch("http://localhost:5050/getdataforcart", {
+    fetch("https://backend-push-production.up.railway.app/getdataforcart", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -81,7 +81,7 @@ const EContextProvider = (props) => {
     // If the user is logged in, send request to server to update cart data
     const authToken = localStorage.getItem("auth-token");
     if (authToken) {
-      fetch("http://localhost:5050/addtocart", {
+      fetch("https://backend-push-production.up.railway.app/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -120,7 +120,7 @@ const EContextProvider = (props) => {
     // If the user is logged in, send request to server to update cart data
     const authToken = localStorage.getItem("auth-token");
     if (authToken) {
-      fetch("http://localhost:5050/removefromcart", {
+      fetch("https://backend-push-production.up.railway.app/removefromcart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -151,7 +151,7 @@ const EContextProvider = (props) => {
     // If the user is logged in, send request to server to clear cart data
     const authToken = localStorage.getItem("auth-token");
     if (authToken) {
-      fetch("http://localhost:5050/clearcart", {
+      fetch("https://backend-push-production.up.railway.app/clearcart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
